@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout Example</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+        }
+
+        .container {
+            display: flex;
+            padding: 20px;
+            gap: 20px; /* Space between sidebar and content */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sidebar {
+            flex: 0 0 25%; /* Don't grow, don't shrink, width is 25% */
+            background-color: #ddd;
+            padding: 20px;
+        }
+
+        .content {
+            flex: 1; /* Grow to take up remaining space */
+            background-color: white;
+            padding: 20px;
+        }
+
+        .sub-content {
+            background-color: #eee;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: sticky; /* Stick to the bottom */
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Media queries for responsiveness */
+
+        /* For tablets (up to 768px) */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack sidebar and content vertically */
+            }
+
+            .sidebar {
+                width: 100%; /* Make sidebar full width */
+                flex: 0; /* Don't grow or shrink in this layout */
+                margin-bottom: 20px;
+            }
+        }
+
+        /* For mobile devices (up to 480px) */
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column; /* Stack navigation items vertically */
+                align-items: center;
+            }
+
+            nav li {
+                margin: 0.5em 0;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+            .sidebar {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Awesome Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="sidebar">
+            <h3>Sidebar</h3>
+            <p>This is some content for the sidebar.</p>
+        </div>
+        <div class="content">
+            <h2>Main Content</h2>
+            <p>This is the main content area of the website. It can contain lots of interesting information and engage the user.</p>
+            <p>Here's another paragraph of content.</p>
+            <div class="sub-content">
+                <h3>Sub-Content Section</h3>
+                <p>More content here!</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 My Awesome Website</p>
+    </footer>
+</body>
+</html>
